@@ -26,7 +26,7 @@ const LineChart = ({ data }) => {
     g.append('path')
       .datum(data)
       .attr('fill', 'none')
-      .attr('stroke', 'steelblue')
+      .attr('stroke', '#a28089')
       .attr('stroke-linejoin', 'round')
       .attr('stroke-linecap', 'round')
       .attr('stroke-width', 2)

@@ -13,12 +13,15 @@ const RadarChart = ({ data }) => {
       domainwidth = width - margin.left - margin.right,
       domainheight = height - margin.top - margin.bottom;
 
+    svgOuter.selectAll("*").remove();
+
+
     svgOuter.attr(
       "viewBox",
       "0 0 " +
-        (width + margin.left + margin.right) +
-        " " +
-        (height + margin.top + margin.bottom)
+      (width + margin.left + margin.right) +
+      " " +
+      (height + margin.top + margin.bottom)
     );
 
     const svg = svgOuter
@@ -109,23 +112,23 @@ const RadarChart = ({ data }) => {
     // green circle borders
     green
       .append("path")
-      .attr("fill", GREEN)
-      .attr("d", innerFirstCircle((3 * Math.PI) / 2, (4 * Math.PI) / 2))
+      .attr("fill", "#a0d2eb")
+      .attr("d", innerFirstCircle(0, 2*Math.PI))
       .style("transform", circleTransform);
     green
       .append("path")
-      .attr("fill", GREEN)
-      .attr("d", innerSecondCircle((3 * Math.PI) / 2, (4 * Math.PI) / 2))
+      .attr("fill", "#e5eaf5")
+      .attr("d", innerSecondCircle(0, 2*Math.PI))
       .style("transform", circleTransform);
     green
       .append("path")
-      .attr("fill", GREEN)
-      .attr("d", innerThirdCircle((3 * Math.PI) / 2, (4 * Math.PI) / 2))
+      .attr("fill", "#d0bdf4")
+      .attr("d", innerThirdCircle(0, 2*Math.PI))
       .style("transform", circleTransform);
     green
       .append("path")
-      .attr("fill", GREEN)
-      .attr("d", innerFourthCircle((3 * Math.PI) / 2, (4 * Math.PI) / 2))
+      .attr("fill", "#8458B3")
+      .attr("d", innerFourthCircle(0, 2*Math.PI))
       .style("transform", circleTransform);
 
     const pi = Math.PI;
@@ -149,8 +152,8 @@ const RadarChart = ({ data }) => {
       const b = y2 - y1;
       return Math.sqrt(a * a + b * b);
     };
-
-    const values = data.reduce((list, element) => {
+    const tempData = JSON.parse(JSON.stringify(data))
+    const values = tempData.reduce((list, element) => {
       const entry = {
         x: null,
         y: null,
@@ -190,8 +193,9 @@ const RadarChart = ({ data }) => {
       .attr("r", 5)
       .attr("data-value", (d) => d.text)
       .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y);
-  }, [data]);
+      .attr("cy", (d) => d.y)
+      .attr("fill", "#a28089");
+  }, []);
 
   return <svg ref={svgRef} width={600} height={400}></svg>;
 };

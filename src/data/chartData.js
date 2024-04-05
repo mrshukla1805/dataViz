@@ -9,23 +9,7 @@ const barData = [
     { letter: "G", frequency: 0.02015 },
     { letter: "H", frequency: 0.06094 },
     { letter: "I", frequency: 0.06966 },
-    { letter: "J", frequency: 0.00153 },
-    { letter: "K", frequency: 0.00772 },
-    { letter: "L", frequency: 0.04025 },
-    { letter: "M", frequency: 0.02406 },
-    { letter: "N", frequency: 0.06749 },
-    { letter: "O", frequency: 0.07507 },
-    { letter: "P", frequency: 0.01929 },
-    { letter: "Q", frequency: 0.00095 },
-    { letter: "R", frequency: 0.05987 },
-    { letter: "S", frequency: 0.06327 },
-    { letter: "T", frequency: 0.09056 },
-    { letter: "U", frequency: 0.02758 },
-    { letter: "V", frequency: 0.00978 },
-    { letter: "W", frequency: 0.0236 },
-    { letter: "X", frequency: 0.0015 },
-    { letter: "Y", frequency: 0.01974 },
-    { letter: "Z", frequency: 0.00074 },
+    { letter: "J", frequency: 0.00153 }
   ];
   
 
@@ -54,5 +38,53 @@ const radarChartData = [
   }
 ]
 
+const sankeyNodes = [
+  { name: 'A1' },
+  { name: 'A2' },
+  { name: 'A3' },
+  { name: 'A4' },
+  { name: 'A5' },
+  { name: 'A6' },
+  { name: 'A7' },
+  { name: 'A8' },
+  { name: 'A9' },
+  { name: 'A10' }
+];
 
-export {barData, lineData, radarChartData}
+const sankeyLinks = [
+  { source: 0, target: 1, value: 200 },
+  { source: 0, target: 2, value: 300 },
+  { source: 1, target: 2, value: 150 },
+  { source: 1, target: 3, value: 50 },
+  { source: 2, target: 3, value: 200 },
+  { source: 2, target: 4, value: 100 },
+  { source: 3, target: 5, value: 50 },
+  { source: 3, target: 6, value: 150 },
+  { source: 4, target: 6, value: 150 },
+  { source: 5, target: 6, value: 100 },
+  { source: 5, target: 7, value: 200 },
+  { source: 6, target: 8, value: 150 },
+  { source: 6, target: 9, value: 200 },
+  { source: 7, target: 9, value: 100 }
+];
+
+
+const densityData = [
+  { category: 'A', value: 10 },
+  { category: 'A', value: 15 },
+  { category: 'A', value: 20 },
+  { category: 'A', value: 25 },
+  { category: 'A', value: 30 },
+  { category: 'B', value: 20 },
+  { category: 'B', value: 25 },
+  { category: 'B', value: 30 },
+  { category: 'B', value: 35 },
+  { category: 'B', value: 40 },
+  { category: 'C', value: 5 },
+  { category: 'C', value: 10 },
+  { category: 'C', value: 15 },
+  { category: 'C', value: 20 },
+  { category: 'C', value: 25 }
+];
+
+export {barData, lineData, radarChartData, sankeyNodes, sankeyLinks, densityData}

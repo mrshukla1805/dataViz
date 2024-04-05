@@ -40,6 +40,7 @@ const BarChart = ({data}) => {
      .attr("y", d => y(d.frequency))
      .attr("width", x.bandwidth())
      .attr("height", d => height - y(d.frequency))
+     .attr("fill", "#8458B3")
      .transition()
      .duration(1000) 
      .delay((d, i) => i * 100) 
