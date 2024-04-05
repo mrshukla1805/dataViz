@@ -31,10 +31,28 @@ const barData = [
 
 const lineData = [1, 3, 5, 4, 8, 6, 3, 8, 8, 10];
 
-const radarChartData = [5, 8, 3, 4, 6];
+const radarChartData = [
+  {
+    "text": "Apple",
+    "quadrant": 3,
+    "circle": 1
+  },
+  {
+    "text": "Banana",
+    "quadrant": 2,
+    "circle": 4
+  },
+  {
+    "text": "Orange",
+    "quadrant": 1,
+    "circle": 3
+  },
+  {
+    "text": "Grapes",
+    "quadrant": 4,
+    "circle": 2
+  }
+]
 
-const radarChartCategory = ['Axis 1', 'Axis 2', 'Axis 3', 'Axis 4', 'Axis 5'];
 
-
-
-export {barData, lineData, radarChartData, radarChartCategory}
+export {barData, lineData, radarChartData}
