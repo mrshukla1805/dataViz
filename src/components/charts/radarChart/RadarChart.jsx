@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
+import { WIDTH, HEIGHT } from '../chart.constants';
 
 const RadarChart = ({ data }) => {
   const svgRef = useRef();
@@ -96,7 +97,6 @@ const RadarChart = ({ data }) => {
     };
     const circleTransform =
       "translate(" + domainwidth / 2 + "px, " + domainheight / 2 + "px)";
-    const GREEN = "#84BFA4";
     const green = svg.append("g").attr("class", "green");
 
     // green background gradient area
@@ -197,7 +197,7 @@ const RadarChart = ({ data }) => {
       .attr("fill", "#a28089");
   }, []);
 
-  return <svg ref={svgRef} width={600} height={400}></svg>;
+  return <svg ref={svgRef} width={WIDTH} height={HEIGHT}></svg>;
 };
 
 export default RadarChart;

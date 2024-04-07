@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { sankey, sankeyLinkHorizontal } from 'd3-sankey';
+import { HEIGHT, WIDTH } from '../chart.constants';
 
 const SankeyChart = ({ nodes, links }) => {
   const svgRef = useRef(null);
@@ -12,7 +13,7 @@ const SankeyChart = ({ nodes, links }) => {
     const sankeyGenerator = sankey()
       .nodeWidth(15)
       .nodePadding(10)
-      .extent([[1, 1], [800 - 1, 400 - 6]]);
+      .extent([[1, 1], [350 - 1, 350 - 6]]);
 
     const { nodes: sankeyNodes, links: sankeyLinks } = sankeyGenerator({
       nodes: nodes.map(d => ({ ...d })),
@@ -23,7 +24,6 @@ const SankeyChart = ({ nodes, links }) => {
 
     svg.selectAll('*').remove();
 
-    console.warn(sankeyLinks)
     const link = svg
       .append('g')
       .selectAll('.link')
@@ -32,7 +32,8 @@ const SankeyChart = ({ nodes, links }) => {
       .attr('class', 'link')
       .attr('d', sankeyLinkHorizontal())
       .attr('stroke-width', d => Math.max(1, d.width - 3))
-      .style('stroke', '#e8e8e8')
+      .style('stroke', '#a0d2eb')
+      .style('stroke-dasharray', 2) 
       .style('stroke-opacity', 0.7)
       .style('fill', 'none');
 
@@ -65,7 +66,7 @@ const SankeyChart = ({ nodes, links }) => {
       .attr('text-anchor', 'start');
   }, []);
 
-  return <svg ref={svgRef} width={800} height={400}></svg>;
+  return <svg ref={svgRef} width={WIDTH} height={HEIGHT}></svg>;
 };
 
 export default SankeyChart;

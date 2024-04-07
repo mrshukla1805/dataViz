@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
+import { WIDTH, HEIGHT } from '../chart.constants';
 
 const LineChart = ({ data }) => {
   const svgRef = useRef();
@@ -42,7 +43,7 @@ const LineChart = ({ data }) => {
   }, [data]);
 
   return (
-    <svg ref={svgRef} width={600} height={400}></svg>
+    <svg ref={svgRef} width={WIDTH} height={HEIGHT}></svg>
   );
 };
 

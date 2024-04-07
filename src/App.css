@@ -1,0 +1,26 @@
+.app-container {
+    display: grid;
+    gap: 20px; /* Adjust the gap between cards */
+    justify-content: center;
+    grid-template-columns: auto auto;   
+  }
+
+
+.header {
+    font-size: 30px;
+    font-weight: 600;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin : 15px;
+    font-family: cursive;
+}
+
+#particles canvas {
+  z-index: -100;
+  position: absolute;
+  background-color: lightgrey;
+}
+
+

@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
+import { WIDTH, HEIGHT } from '../chart.constants';
 
 const BarChart = ({data}) => {
     const ref = useRef();
@@ -49,7 +50,7 @@ const BarChart = ({data}) => {
   }, [data]); 
 
   return (
-    <svg ref={ref} width="600" height="400"></svg>
+    <svg ref={ref} width={WIDTH} height={HEIGHT}></svg>
   );
 }
 
