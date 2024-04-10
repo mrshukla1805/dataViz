@@ -2,14 +2,15 @@
     display: grid;
     gap: 20px; /* Adjust the gap between cards */
     justify-content: center;
-    grid-template-columns: auto auto;   
+    grid-template-columns: auto auto;  
+    font-family: cursive; 
   }
 
 
 .header {
     font-size: 30px;
     font-weight: 600;
-    color: grey;
+    color: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,10 +18,17 @@
     font-family: cursive;
 }
 
+
 #particles canvas {
   z-index: -100;
   position: absolute;
   background-color: lightgrey;
 }
 
+.row {
+  transition: transform 0.3s ease; 
+}
 
+.row:hover {
+  transform: scale(1.05);
+}
